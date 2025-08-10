@@ -1,0 +1,12 @@
+
+mark_venv/
+
+# Variables de entorno
+.env
+
+# Archivos de caché de Python
+__pycache__/
+*.pyc
+
+# Caché de Streamlit
+.streamlit/
