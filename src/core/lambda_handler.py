@@ -1,4 +1,3 @@
-# Este código se usaría en una función AWS Lambda
 import json
 import os
 import datetime
@@ -25,7 +24,7 @@ def lambda_handler(event, context):
 
     db_manager = DynamoDBManager()
     processed_comments = []
-    all_comment_texts = [] # Para generar un resumen consolidado si se desea
+    all_comment_texts = [] 
 
     for comment in comments_raw:
         comment_id = comment.get('id')
@@ -58,11 +57,9 @@ def lambda_handler(event, context):
         else:
             print(f"❌ Fallo al añadir comentario {comment_id} a DynamoDB.")
 
-    # 5. Opcional: Generar un resumen de Bedrock para el lote de comentarios recién procesados
-    # Esto podría hacerse para un resumen diario o por lotes de archivos, no por cada comentario individual
+    # 5.  Generar un resumen de Bedrock para el lote de comentarios recién procesados
     if all_comment_texts:
         summary = generate_summary_bedrock(all_comment_texts)
-        # Aquí podrías guardar el resumen en otra tabla de DynamoDB o en el mismo S3
         print(f"✨ Resumen de Bedrock para este lote de comentarios: {summary[:200]}...") # Imprime los primeros 200 chars
 
     print(f"✅ Procesamiento completado para {len(processed_comments)} comentarios.")

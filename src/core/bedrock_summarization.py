@@ -34,7 +34,7 @@ Assistant:
         
         response = bedrock_runtime.invoke_model(
             body=body,
-            modelId='anthropic.claude-v2', # Asegúrate de que este modelo esté habilitado en tu cuenta Bedrock
+            modelId='anthropic.claude-v2', # 
             accept='application/json',
             contentType='application/json'
         )

@@ -6,7 +6,6 @@ from collections import Counter
 import os
 from dotenv import load_dotenv
 
-# Asegúrate de que las variables de entorno se carguen al inicio
 load_dotenv()
 
 # Importar el DynamoDBManager
@@ -16,13 +15,12 @@ db_manager = DynamoDBManager()
 
 # --- Funciones de Utilidad para el Dashboard ---
 
-# --- Definiciones Globales ---
-# Mapeo de sentimientos a una escala numérica (MOVER ESTO AQUÍ)
+
 sentiment_map = {
     'POSITIVE': 5,
     'NEUTRAL': 3,
     'NEGATIVE': 1,
-    'MIXED': 2 # O podrías ajustar este valor
+    'MIXED': 2 
 }
 
 # --- Funciones de Utilidad para el Dashboard ---
@@ -44,7 +42,6 @@ def create_word_cloud_data(comments_df):
         return []
     
     all_words = ' '.join(comments_df['text']).lower().split()
-    # Filtra palabras comunes o de ruido (stopwords)
     stopwords = set(["el", "la", "los", "las", "un", "una", "unos", "unas", "de", "con", "en", "para", "por", "es", "no", "y", "pero", "que", "muy", "me", "su", "mi", "se"])
     filtered_words = [word for word in all_words if word.isalpha() and word not in stopwords]
     
@@ -56,7 +53,7 @@ def create_word_cloud_data(comments_df):
 
 st.set_page_config(layout="wide", page_title="Dashboard de Análisis de Comentarios de Snacks")
 
-st.title("📊 Dashboard de Análisis de Comentarios de Clientes")
+st.title("Dashboard de Análisis de Comentarios de Clientes")
 st.markdown("Visualización en tiempo real del sentimiento y las tendencias de los comentarios sobre los nuevos snacks.")
 
 # Sidebar para acciones
@@ -81,7 +78,7 @@ if comments_df.empty:
     st.warning("No hay comentarios disponibles en la base de datos de DynamoDB. Asegúrate de que tu Lambda esté procesando datos en S3.")
 else:
     # Sección 1: Rendimiento General de los Comentarios
-    st.header("📈 Rendimiento General de los Comentarios")
+    st.header("Rendimiento General de los Comentarios")
     st.markdown("---")
 
     col1, col2, col3 = st.columns(3)
@@ -108,7 +105,6 @@ else:
     st.subheader("Nube de Palabras Clave")
     word_cloud_data = create_word_cloud_data(comments_df)
     if word_cloud_data:
-        # Streamlit no tiene un componente nativo de nube de palabras, simulación con texto
         st.write("Las palabras más frecuentes son:")
         st.write(", ".join([f"**{w['text']}** ({w['value']})" for w in word_cloud_data]))
     else:
@@ -120,13 +116,11 @@ else:
     st.header("📝 Resúmenes de Bedrock y Detalles")
     st.markdown("---")
 
-    # Últimos Resúmenes de IAGen (asumiendo que los resúmenes se guardan en el comentario o se generan al vuelo)
+
     # Para un dashboard real-time, estos resúmenes serían generados por la Lambda y almacenados en DynamoDB.
     st.subheader("Últimos Resúmenes de IAGen")
-    # Simulación: Si tuvieras una columna 'summary_bedrock' en comments_df
     # st.table(comments_df[['timestamp', 'text', 'summary_bedrock']].tail(5))
     
-    # Para este MVP, mostraremos los 5 comentarios más recientes y su resumen si existiera
     latest_comments_display = db_manager.get_latest_comments(limit=5)
     if latest_comments_display:
         st.dataframe(pd.DataFrame(latest_comments_display)[['timestamp', 'text', 'sentiment', 'entities']])
@@ -160,7 +154,7 @@ else:
 
     # Comparación de Productos (Placeholder - Requiere datos de otros productos)
     st.subheader("Comparación de Productos (Ejemplo)")
-    st.info("Esta sección compararía el sentimiento del nuevo snack con otros productos existentes. Se necesitan datos adicionales de otros productos para esta funcionalidad.")
+    st.info("Esta sección compara el sentimiento del nuevo snack con otros productos existentes. Se necesitan datos adicionales de otros productos para esta funcionalidad.")
     # Ejemplo de datos para comparación (reemplazar con datos reales de DynamoDB)
     comparison_data = {
         'Producto': ['Nuevo Snack', 'Snack A (Existente)', 'Snack B (Existente)'],

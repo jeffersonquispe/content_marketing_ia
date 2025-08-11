@@ -114,10 +114,10 @@ https://docs.google.com/presentation/d/1OL2qyyDhaniO1Ak4hwuhSCyiAKDDporq2dyNVUBH
 
 
 ## Bibliografia
-• Abdalla, M. J., Ali, F., Alotaibi, S., & Ali, L. (2025). Beyond the hype: Evaluating the impact of generative AI on brand authenticity, image, and consumer behavior in the restaurant industry. International Journal of Hospitality Management, 131, 104318. https://doi.org/10.1016/j.ijhm.2025.104318
+- Abdalla, M. J., Ali, F., Alotaibi, S., & Ali, L. (2025). Beyond the hype: Evaluating the impact of generative AI on brand authenticity, image, and consumer behavior in the restaurant industry. International Journal of Hospitality Management, 131, 104318. https://doi.org/10.1016/j.ijhm.2025.104318
 
-• Brüns, J. D., & Meißner, M. (2024). Do you create your content yourself? Using generative artificial intelligence for social media content creation diminishes perceived brand authenticity. Journal of Retailing and Consumer Services, 79, 103790. https://doi.org/10.1016/j.jretconser.2024.103790
+- Brüns, J. D., & Meißner, M. (2024). Do you create your content yourself? Using generative artificial intelligence for social media content creation diminishes perceived brand authenticity. Journal of Retailing and Consumer Services, 79, 103790. https://doi.org/10.1016/j.jretconser.2024.103790
 
-• Critical-Elephant630. (2024). Advanced Prompt Engineering Techniques for 2025: Beyond Basic Instructions. r/PromptEngineering. [Publicación de Reddit]. Recuperado de [La URL específica no se proporciona en la fuente original, solo la comunidad de Reddit. La fecha se infiere del texto "4 meses atrás" y el contexto del contenido].
+- Critical-Elephant630. (2024). Advanced Prompt Engineering Techniques for 2025: Beyond Basic Instructions. r/PromptEngineering. [Publicación de Reddit]. Recuperado de [La URL específica no se proporciona en la fuente original, solo la comunidad de Reddit. La fecha se infiere del texto "4 meses atrás" y el contexto del contenido].
 
-• [Autor(es) no especificados en el extracto]. (2025). Harnessing generative AI for personalized E-commerce product descriptions: A framework and practical insights. Computer Standards & Interfaces, 94, 104012. https://doi.org/10.1016/j.csi.2025.104012
+- [Autor(es) no especificados en el extracto]. (2025). Harnessing generative AI for personalized E-commerce product descriptions: A framework and practical insights. Computer Standards & Interfaces, 94, 104012. https://doi.org/10.1016/j.csi.2025.104012

@@ -13,7 +13,7 @@ def analyze_sentiment(text):
         sentiment_score = response['SentimentScore'] # Diccionario con puntajes
         return sentiment, sentiment_score
     except Exception as e:
-        print(f"❌ Error al analizar sentimiento con Comprehend: {e}")
+        print(f" Error al analizar sentimiento con Comprehend: {e}")
         return "UNKNOWN", {}
 
 def extract_entities(text):
@@ -28,5 +28,5 @@ def extract_entities(text):
                     for entity in response['Entities']]
         return entities
     except Exception as e:
-        print(f"❌ Error al extraer entidades con Comprehend: {e}")
+        print(f" Error al extraer entidades con Comprehend: {e}")
         return []

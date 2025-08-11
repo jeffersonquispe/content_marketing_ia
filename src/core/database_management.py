@@ -1,6 +1,6 @@
 import boto3
 import os
-import decimal # Para manejar tipos decimales en DynamoDB
+import decimal 
 import json
 
 class DynamoDBManager:
@@ -80,7 +80,7 @@ class DynamoDBManager:
             # Convertir floats a Decimal para DynamoDB (buena práctica para números exactos)
             item = json.loads(json.dumps(comment_data), parse_float=decimal.Decimal)
             self.table.put_item(Item=item)
-            # print(f"✅ Comentario '{comment_data['comment_id']}' añadido a DynamoDB.")
+            # print(f" Comentario '{comment_data['comment_id']}' añadido a DynamoDB.")
             return True
         except Exception as e:
             print(f"❌ Error al añadir comentario a DynamoDB: {e}")
@@ -104,7 +104,7 @@ class DynamoDBManager:
                         item[key] = float(value)
             return data
         except Exception as e:
-            print(f"❌ Error al obtener comentarios de DynamoDB: {e}")
+            print(f" Error al obtener comentarios de DynamoDB: {e}")
             return []
     
     def get_latest_comments(self, limit=10):
@@ -122,5 +122,5 @@ class DynamoDBManager:
                         item[key] = float(value)
             return comments[:limit]
         except Exception as e:
-            print(f"❌ Error al obtener últimos comentarios de DynamoDB: {e}")
+            print(f" Error al obtener últimos comentarios de DynamoDB: {e}")
             return []
