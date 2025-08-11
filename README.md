@@ -96,7 +96,7 @@ La solución está organizada de manera modular para una mejor escalabilidad y m
 Screemshots del proyecto ...
 ![Generacion de descripciones ](imagenes/descripcion.png)
 ![Generacion de imagenes promocionales ](imagenes/image.png)
-![Analisis de comentarios ](imagenes/image.png)
+![Analisis de comentarios ](imagenes/comments.png)
 ![Dashboard de Analisis de comentarios en Real time](imagenes/dashboard.png)
 
 ### 📂 Presentacion
